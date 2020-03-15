@@ -1,0 +1,945 @@
+<style>
+
+
+@import url("https://fonts.googleapis.com/css?family=Varela+Round&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+html:not([data-scroll='0']) body {
+    padding-top: 0em;
+}
+
+html:not([data-scroll='0']) header {
+    position: fixed;
+    top: 0;
+    background-color: rgba(40, 52, 63, 0.87);
+    box-shadow: 0 0 0.7em rgba(0, 0, 0, 0.856);
+}
+  
+
+body{
+  background-attachment: fixed;
+  font-family: 'Robot',sans-serif;
+  background-repeat: no-repeat;
+  background-image: url("/images/background.jpg");
+  background-size: cover;
+  font-size: 16px;
+}
+
+body::-webkit-scrollbar {
+  width: 3px;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px white;
+          box-shadow: inset 0 0 6px white;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #334658;
+}
+
+
+header {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Varela Round',sans-serif;
+    z-index: 5;
+}
+
+.logo #logoicon{
+    height: 8%;
+    width: 8%;
+    margin: 1% 1% 1% 1%;
+}
+
+.logo #texticon{
+    width: 18%;
+}
+
+.hamburger {
+    display: none;
+}
+
+.line {
+    width: 40px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+
+
+.navigation {
+    transition: all .6s ease-in-out;
+    margin-top: 1.5rem;
+}
+
+.navigation ul {
+    display: flex;
+}
+
+.navigation ul li {
+    list-style: none;
+    margin-right: 1rem;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #59f0f5;
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+    width: 100%;
+    padding: 2rem;
+    display: inline-block;
+    transition: all .3s ease;
+}
+
+.navigation ul li a::after{
+    content: '';
+   display: block;
+   width: 0;
+   margin-top: 2px;
+   height: 2px;
+   background: #ae2fb3;
+   -webkit-transition: width .3s;
+   transition: width .3s;
+ }
+
+.navigation ul li a:hover{
+    text-decoration: underline;
+    color: rgb(116, 243, 243);
+}
+
+.navigation ul li a:hover::after{
+    width: 100%;
+}
+
+
+
+ .navigation.active {
+ left: 0;
+}
+
+/* .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  } */
+
+
+/*center animation*/
+
+#center-items{
+    display: flex;
+    margin-top: 3%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#center-items svg{
+    margin-top: 4%;
+}
+
+#inner-play{
+    animation: move1 1.5s ease-out .3s alternate infinite;
+  }
+  
+  #play-btn{
+    animation: move1 1.5s ease-out .5s alternate infinite;
+  }
+  
+  @keyframes move1{
+    0%{
+      transform: translate(-1%,0);
+      opacity: .2;
+    }
+    100%{
+      transform: translate(4%,0);
+      opacity: 1;
+    }
+  
+  }
+  
+  /* rotate animation center*/
+  
+  #rotator1{
+    animation: rotate1 1.5s ease-in-out .3s forwards 1;
+    transform-origin: center;
+  }
+  
+  #rotator2{
+    animation: rotate2 1.5s ease-in-out .3s forwards 1;
+  }
+  
+  @keyframes rotate1{
+    from{
+      transform: rotateZ(0deg);
+    }
+    to{
+      transform: rotateZ(360deg);
+    }
+  }
+  
+  @keyframes rotate2{
+    from{
+      transform: rotateZ(0deg);
+    }
+    to{
+      transform: rotateZ(-360deg);
+    }
+  }
+
+/*about*/
+
+#about{
+    margin-top: 20%;
+    background-color: #2a9c9cbd;
+    font-family: 'Varela Round',sans-serif;
+}
+  
+#about .text{
+    color: white;
+    width: 50%;
+    padding-bottom: 3rem;
+    margin: 5rem auto 0 auto;
+    line-height: 125%;
+    font-size: 1.5rem;
+    text-align: center;
+}
+  
+.eastern{
+    display: flex;
+    justify-content: center;
+}
+
+/*Main - attraction*/
+#main-attraction{
+    padding: 0 0 3% 0;
+    margin: 15vh 0 0 0;
+    text-align: center;
+  
+  }
+  
+  #main-attraction h1{
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 10vh;
+    font-family: 'Varela Round',sans-serif;
+  }
+  
+  .guest{
+    width: 100%;
+    max-height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    margin: 5% 0;
+  }
+
+  .guestname{
+    font-size: 2.5rem;
+  }
+  
+  .description{
+    width: 40%;
+    color: #ffffff;
+    font-size: 1.5rem;
+    line-height: 125%;
+    font-family: 'Varela Round',sans-serif;
+  }
+  
+  
+  
+  #rito{
+    width: 35%;
+    height: 25%;
+    
+  }
+  
+  #riddles{
+    width: 35%;
+    height: 17%;
+  }
+
+/*Main Events*/
+
+  .main-events{
+    background-color: rgba(248, 240, 171, 0.836);
+    padding-bottom: 2%;
+  }
+  
+  .main-events h1{
+    text-align: center;
+    font-size: 4rem;
+    color: rgb(0, 0, 0);
+    padding-top: 10vh;  
+    margin-bottom: 10vh;
+    font-family: 'Varela Round',sans-serif;
+  }
+  
+  .event{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    padding: 5%;
+    border-radius: 10px;
+    font-family: 'Varela Round', sans-serif;
+    transition: all .3s ease-out;
+  }
+
+  .eventname{
+      font-size: 2.5rem;
+  }
+  
+  .event:hover{
+    transform: scale(1.05);
+  }
+  
+  #battleofbands{
+    -webkit-box-shadow: 0px 0px 29px -10px rgba(120,120,112,1);
+    -moz-box-shadow: 0px 0px 29px -10px rgba(120,120,112,1);
+    box-shadow: 0px 0px 29px -10px rgba(120,120,112,1);
+    background-color: #faf09c;
+  }
+  
+  #dance{
+    -webkit-box-shadow: 0px 0px 29px -9px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 29px -9px rgba(0,0,0,1);
+     box-shadow: 0px 0px 29px -9px rgba(0,0,0,1);
+    background-color: #ee475b;
+  
+  }
+  
+  #singing{
+    -webkit-box-shadow: 0px 0px 29px -9px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 29px -9px rgba(0,0,0,1);
+     box-shadow: 0px 0px 29px -9px rgba(0,0,0,1);
+    background-color: #ffffff;
+  }
+  
+  #beatbox{
+    -webkit-box-shadow: 0px 0px 29px -9px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 29px -9px rgba(0,0,0,1);
+     box-shadow: 0px 0px 29px -9px rgba(0,0,0,1);
+     background-color: #bfdcf8;
+  }
+  
+  #openmic{
+    -webkit-box-shadow: 0px 0px 29px -9px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 29px -9px rgba(0,0,0,1);
+     box-shadow: 0px 0px 29px -9px rgba(0,0,0,1);
+     background-color: rgb(248, 179, 52);
+  }
+  
+  #mr-ms{
+    -webkit-box-shadow: 0px 0px 29px -10px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 29px -10px rgba(0,0,0,1);
+     box-shadow: 0px 0px 29px -10px rgba(0,0,0,1);
+     background-color: rgb(54, 35, 97);
+  }
+  
+  
+  #battleofbands img{
+    width: 30%;
+    height: 25%;
+  }
+  #singing img{
+    width: 35%;
+    height: 40%;
+  }
+  
+  #openmic img{
+    width: 35%;
+    height: 40%;
+  }
+  
+  #mr-ms img{
+      width: 45%;
+      height: 50%;
+    }
+  
+  .info{
+    width: 40%;
+    color: #000000;
+    font-size: 1.5rem;
+    line-height: 125%;
+    text-align: center;
+    font-family: 'Varela Round',sans-serif;
+  }
+  
+  .info a{
+    margin: 3%;
+    padding: 1%;
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: rgb(132, 82, 248);
+  }
+  
+  .info a:hover{
+    color: rgb(0, 0, 0);
+  }
+  
+  /* footer*/
+
+  /*Footer*/
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Varela Round',sans-serif;
+    background-color: rgb(40, 52, 63);
+}
+
+.social a{
+  margin: 0 4% 0 4%;
+}
+  
+  .contact-us{
+    display: flex;
+    margin-top: 2%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .ourname{
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+
+@media only screen and (max-width: 769px) {
+
+    body{
+        font-family: 'Robot',sans-serif;
+        background-color: #0e141e;
+        background-repeat: repeat;
+        background-size: contain;
+        font-size: 16px;
+    }
+    
+    .navigation ul li{
+        background-color: #24252a;
+    }
+
+
+
+    .logo #logoicon{
+        width: 20%;
+        height: 20%;
+    }
+
+    .logo #texticon{
+        width: 40%;
+        height: 40%;
+    }
+    .navigation {
+        position: absolute;
+        top: 6rem;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+        background-color: #24252a;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navigation ul li {
+        width: 100%;
+        text-align: center;
+        
+    }
+
+    .navigation ul li a {
+    /*     border-bottom: solid .25px rgba(211, 211, 211, .6); */
+        display: block;
+
+    }
+
+    #center-items img{
+        display:none;
+
+    }
+
+    #center-items svg{
+        margin-top: 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    #about{
+        margin-top: 7%;
+    }
+
+    .eastern img{
+        height: 50%;
+        width: 80%;
+    }
+
+    #about .text{    
+        width: 80%;
+        padding-bottom: 1rem;
+        margin: 3rem auto 0 auto;
+        line-height: 125%;
+        font-size: 0.8rem;
+    }
+
+    #main-attraction h1{
+        font-size: 2.5rem;
+    }
+
+    .guest{
+        max-height: 100%;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin: 5% 0;
+    }
+
+    #riddleswrap{
+        flex-direction: column;
+    }
+
+    .guestname{
+        font-size: 1.5rem;
+    }
+
+    .description{
+        width: 90%;
+        font-size: .8rem;
+        
+    }
+
+    #rito{
+        width: 70%;
+        height: 50%;
+        margin-bottom: 0;
+      }
+      
+    #riddles{
+        width: 70%;
+        height: 50%;
+        margin-bottom: 0;
+    }
+
+    .main-events h1{
+        text-align: center;
+        font-size: 3rem;
+        color: rgb(0, 0, 0);
+        padding-top: 5vh;  
+        margin-bottom: 7vh;
+      }
+      
+      .event{
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        margin-bottom: 15%;
+        padding: 5%;
+      }
+
+      .eventname{
+          font-size: 1.5rem;
+      }
+
+      #battleofbands img{
+        width: 50%;
+        height: 45%;
+      }
+      #singing img{
+        width: 65%;
+        height: 60%;
+      }
+      #dance img{
+          width: 90%;
+          height: 100%;
+      }
+      
+      #openmic img{
+        width: 50%;
+        height: 50%;
+      }
+      #beatbox img{
+          width: 100%;
+          height: 75%;
+      }
+      
+      #mr-ms img{
+          width: 70%;
+          height: 90%;
+        }
+      
+      .info{
+        width: 90%;
+        margin-top: 5%;
+        color: #000000;
+        font-size: .8rem;
+        line-height: 125%;
+        text-align: center;
+        font-family: 'Varela Round',sans-serif;
+      }
+      
+      .info a{
+        margin: 3%;
+        padding: 1%;
+        text-decoration: none;
+        color:rgb(255, 255, 255);
+        border-radius: 10px;
+        background-color: rgb(132, 82, 248);
+      }
+      
+      .reach-us h1,.social h1{
+          font-size: 1rem;
+      }
+
+      .social a{
+          font-size: 1rem;
+          margin: 0;
+      }
+
+
+      .reach-us p{
+          padding: 0;
+          margin: 0;
+          font-size: .65rem;
+      }
+      
+      .ourname{
+        font-size: .6rem;
+        margin-top: 5%;
+      }
+}
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<header id="navbar">
+  <div class="logo"><a href="#"><img id="logoicon" src="/images/Atulyamlogo.png" alt="logo"><img id="texticon" src="/images/Atulyam.png" alt=""></a></div>
+  <nav class="navigation">
+      <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#main-events">Events</a></li>
+          <li><a href="#">Sponsor</a></li>
+          <li><a href="/users/register">Register</a></li>
+      </ul>
+  </nav>
+  <div class="hamburger">
+          <div class="line line1"></div>
+          <div class="line line2"></div>
+          <div class="line line3"></div>
+  </div>
+</header>
+
+<div id="center-items"> 
+  <img src="/images/left.png" alt="">
+  <svg width="937" height="625" viewBox="0 0 937 625" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="Group 2">
+    <g id="Vector" filter="url(#filter0_d)">
+    <path d="M621.828 182.213C621.828 264.621 552.897 331.426 467.866 331.426C382.835 331.426 313.904 264.621 313.904 182.213C313.904 99.8048 382.835 33 467.866 33C552.897 33 621.828 99.8048 621.828 182.213Z" stroke="#FFFF40" stroke-width="5"/>
+    </g>
+    <g id="Vector_2" filter="url(#filter1_d)">
+    <path d="M344.312 94.5872C290.425 128.246 152.322 192.7 31 181.243" stroke="#FAFF04" stroke-width="4"/>
+    </g>
+    <g id="Vector_3" filter="url(#filter2_d)">
+    <path d="M593.345 94.5872C647.231 128.246 785.335 192.7 906.657 181.243" stroke="#FAFF04" stroke-width="4"/>
+    </g>
+    <g id="play-btn" filter="url(#filter3_d)">
+    <path d="M430.482 239.4C429.777 239.4 429.072 239.223 428.436 238.869C427.151 238.154 426.357 236.822 426.357 235.376V130.758C426.357 129.312 427.151 127.98 428.436 127.265C429.732 126.553 431.307 126.569 432.58 127.293L523.307 179.602C524.564 180.328 525.333 181.645 525.333 183.067C525.333 184.49 524.564 185.806 523.307 186.533L432.58 238.842C431.932 239.212 431.206 239.4 430.482 239.4ZM430.482 130.758L431.482 233.376L521.307 183.067L430.482 130.758Z" fill="#FAFF05"/>
+    </g>
+    <g id="rotator1" filter="url(#filter4_d)">
+    <mask id="path-5-inside-1" fill="white">
+    <path d="M468 83C454.868 83 441.864 85.5866 429.732 90.612C417.599 95.6375 406.575 103.003 397.289 112.289C388.003 121.575 380.638 132.599 375.612 144.732C370.587 156.864 368 169.868 368 183L373.035 183C373.035 170.529 375.492 158.18 380.264 146.659C385.037 135.137 392.032 124.668 400.85 115.85C409.668 107.032 420.137 100.037 431.659 95.2642C443.18 90.4918 455.529 88.0355 468 88.0355L468 83Z"/>
+    </mask>
+    <path d="M468 83C454.868 83 441.864 85.5866 429.732 90.612C417.599 95.6375 406.575 103.003 397.289 112.289C388.003 121.575 380.638 132.599 375.612 144.732C370.587 156.864 368 169.868 368 183L373.035 183C373.035 170.529 375.492 158.18 380.264 146.659C385.037 135.137 392.032 124.668 400.85 115.85C409.668 107.032 420.137 100.037 431.659 95.2642C443.18 90.4918 455.529 88.0355 468 88.0355L468 83Z" stroke="#06FFF0" stroke-width="10" mask="url(#path-5-inside-1)"/>
+    </g>
+    <g id="rotator2" filter="url(#filter5_d)">
+    <mask id="path-6-inside-2" fill="white">
+    <path d="M468 283C481.132 283 494.136 280.413 506.268 275.388C518.401 270.362 529.425 262.997 538.711 253.711C547.997 244.425 555.362 233.401 560.388 221.268C565.413 209.136 568 196.132 568 183L562.965 183C562.965 195.471 560.508 207.82 555.736 219.341C550.963 230.863 543.968 241.332 535.15 250.15C526.332 258.968 515.863 265.963 504.341 270.736C492.82 275.508 480.471 277.965 468 277.965L468 283Z"/>
+    </mask>
+    <path d="M468 283C481.132 283 494.136 280.413 506.268 275.388C518.401 270.362 529.425 262.997 538.711 253.711C547.997 244.425 555.362 233.401 560.388 221.268C565.413 209.136 568 196.132 568 183L562.965 183C562.965 195.471 560.508 207.82 555.736 219.341C550.963 230.863 543.968 241.332 535.15 250.15C526.332 258.968 515.863 265.963 504.341 270.736C492.82 275.508 480.471 277.965 468 277.965L468 283Z" stroke="#FA06FF" stroke-width="10" mask="url(#path-6-inside-2)"/>
+    </g>
+    <g id="inner-play" filter="url(#filter6_d)">
+    <path d="M468 189.89V239.107L516.976 212.868L471.143 188.26C470.501 187.919 469.705 187.912 469.05 188.247C468.401 188.583 468 189.21 468 189.89Z" stroke="#FAFF04" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g id="tail" filter="url(#filter7_d)">
+    <path d="M468.136 363.713L468.913 604.714" stroke="#FAFF04" stroke-width="4"/>
+    </g>
+    </g>
+    <defs>
+    <filter id="filter0_d" x="281.404" y="0.5" width="372.923" height="363.426" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+    <feOffset/>
+    <feGaussianBlur stdDeviation="15"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.980392 0 0 0 0 1 0 0 0 0 0.0156863 0 0 0 1 0"/>
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <filter id="filter1_d" x="0.811523" y="62.891" width="374.559" height="151.699" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+    <feOffset/>
+    <feGaussianBlur stdDeviation="15"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.980392 0 0 0 0 1 0 0 0 0 0.0156863 0 0 0 1 0"/>
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <filter id="filter2_d" x="562.285" y="62.891" width="374.559" height="151.699" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+    <feOffset/>
+    <feGaussianBlur stdDeviation="15"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.980392 0 0 0 0 1 0 0 0 0 0.0156863 0 0 0 1 0"/>
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <filter id="filter3_d" x="406.357" y="106.741" width="138.976" height="152.66" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+    <feOffset/>
+    <feGaussianBlur stdDeviation="10"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.980392 0 0 0 0 1 0 0 0 0 0.0196078 0 0 0 1 0"/>
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <filter id="filter4_d" x="358" y="73" width="120" height="120" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+    <feOffset/>
+    <feGaussianBlur stdDeviation="5"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.0235294 0 0 0 0 1 0 0 0 0 0.941176 0 0 0 1 0"/>
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <filter id="filter5_d" x="458" y="173" width="120" height="120" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+    <feOffset/>
+    <feGaussianBlur stdDeviation="5"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.992386 0 0 0 0 0.620833 0 0 0 0 1 0 0 0 1 0"/>
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <filter id="filter6_d" x="446" y="166" width="92.9764" height="95.1068" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+    <feOffset/>
+    <feGaussianBlur stdDeviation="10"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.980392 0 0 0 0 1 0 0 0 0 0.0196078 0 0 0 1 0"/>
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <filter id="filter7_d" x="446.136" y="343.706" width="44.7774" height="281.014" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+    <feOffset/>
+    <feGaussianBlur stdDeviation="10"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0.980392 0 0 0 0 1 0 0 0 0 0.0156863 0 0 0 1 0"/>
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    </defs>
+    </svg>
+    
+    <img src="/images/right.png" alt="">
+    
+</div>
+
+<div id="about">
+  <div class="eastern">
+    <img src="/images/eastern.svg" alt="">
+  </div>
+  <div class="text">
+    <p style="color: #f1758a;"><strong>Hola folks !,</strong></p>
+    <p> 
+      Its that time of the year where the seasons transcends from the chilling winter to warm springs, in the middle of hectic academic progress the cultural fest of NIT Arunachal Pradesh will resurrect the youth with the cultural gathering and an entertaining extravaganza from <strong style="color: #000000;">20th to 22nd march</strong>.  
+    </p>
+    <p>We cordially welcome each and everyone of you to the prepossessing beauty of state of Arunachal Pradesh, which is the first state in our country to be illuminated by the sun's rays and is therefore appropriately known as "The Land of the Rising Sun". A dreamlike visualisation of crepuscular rays streaming through the cracks in the clouds to emphatically shine and announce the dawn of new day between serene, lush green mountains with the iconic Hornbills fleeing across these sunlit mountains is incredible, yet reality to the people of Arunachal Pradesh.</p>
+    <p>Indeed, it is a gateway to serenity. Arunachal Pradesh is known as <strong style="color: #000000;">"Land of Orchids"</strong>and <strong style="color: #000000;">"Paradise of Botanist"</strong> having blessed with the diverse range of plant species. People of the land are well aware of the importance of nature and hence worship the elements of the environment and follow the religion of <strong style="color: #000000;">Donyi Polo</strong> which literally means the <strong style="color: #000000;">Sun and Moon</strong>.</p>
+  </div>
+</div>
+
+<div id="main-attraction">
+  <h1>-- Who's Here? --</h1>
+    <div class="guest">
+      
+        <p class="description"><br><br><br><strong class="guestname">- Rito Riba -<br><br></strong>The new singing sensation, the rising star of Arunachal Pradesh is here to grace the stage of ATULYAM 2K20. Gifted with a melancholic voice , he started his journey from the famous sharing and viewing platform "Youtube". He gained immense popularity with a constantly increasing fanbase.Fans go crazy over him. Come and join us here to witness this amazing talent.</p>      
+      <img id="rito" src="/images/rito.jpg" alt="">
+    </div>
+    <div class="guest" id="riddleswrap">
+      <img id="riddles" src="/images/riddles.jpg" alt="">
+      
+        <p class="description"><br><br><br><strong class="guestname">- Riddles The Band -<br><br></strong>Music speaks one’s life desires at the same time it softens one with love! The “RIDDLES” is here to make you love with Music, coz music is our live for…. A riddle is a statement or question or phrase having a double or veiled meaning, put forth as a puzzle to be solved. "RIDDLES" is an Experimental Rock Band From Kolkata.<br> Get high in music at the closing day of ATULYAM2020. </p>
+      
+    </div>
+</div>
+
+<div class="main-events" id="main-events">
+  <h1>- EVENTS -</h1>
+  <div id="battleofbands" class="event">
+    <div class="info">
+      <p><strong class="eventname">- Battle of Bands -</strong><br><br>ATULYAM'S frontline mega-event , which truely justifies the incredible meaning of the title, must be the BATTLE OF BANDS. Musical ensembles consisting of versatile styles ranging from rock & pop music prompting the audience to stomp and tap the floors to jazz bands moving your arms to the rythmes of the tunes , get ready to experience the muscial night at NIT Arunachal Pradesh during our cultural fest ATULYAM. </p>
+      <p>The price money of the triumphing trumpets will be <strong style="color: orange"> ₹ 12000 </strong>but all the participants are requested to pay <strong style="color: orange">an entry fee of ₹ 1000</strong> for their performance. So make sure to catch up with us that night.</p>
+      <p>Register for: </p>
+      <a onclick="showAlert()" href="#battleofbands">Battle of Bands</a>
+    </div>
+    <img src="/images/battleofband.jpg" alt="">
+  </div>
+  <div id="dance" class="event">
+    <div class="info">
+      <p><strong class="eventname">- Dance -</strong><br><br>If you think you have the legs to shatter the stage with mesmerisingly fluid moves to the tunes and the rythmes of music to drive away the audience with an eye -feasty,attractive dance .We ,at NIT Arunachal Pradesh are providing a platform for you people to showcase your moves with a mega-event of dance competition. Stamp your name in solo dance competition if you can break the stage on your own or hire a group to shatter the stage with a team in group dance competition . The cash prize for solo dance is ₹ 5000 & ₹ 10000 for group dance. But the participants are requested to pay an entry fee of ₹ 300 for solo and ₹ 1000 for group dance competitions . </p>
+      <p>Register for: </p>
+      <a onclick="showAlert()" href="#dance">Group Dance</a>
+      <a onclick="showAlert()" href="#dance">Solo Dance</a>
+    </div>
+    <img src="/images/dance.png" alt="">
+  </div>
+  <div id="singing" class="event">
+    <div class="info">
+      <p><strong class="eventname">- Singing -</strong><br><br>A scientific fact about singing is the left part of our brain is  free flowing , no strings attatched musical actuator where the tunes are communicated to and from the brain . After recognising good music , singing is the verbal process where the frequencies and the pitch adjust to produce melodies . Science apart, ATULYAM also has a mega-event for the meliflous voices . Make sure you tune in this event with an entry fee of ₹ 300 to participate and win a prizes worth ₹ 5000.</p>
+      <p>Register for: </p>
+      <a onclick="showAlert()" href="#singing">Singing</a>
+    </div>
+    <img src="/images/singing.png" alt="">
+  </div>
+  <div id="beatbox" class="event">
+    <div class="info">
+      <p><strong class="eventname">- Talent Hunt -</strong><br><br>We all hold an individual and unique talent in some field . The Talent Hunt of NIT Arunachal Pradesh is an exclusive mega-event consisting of unconventional talents like beat boxing , mimicry, rapping and stand up comedy . Beat boxing is the vocal prescussion of musical inssturments , Mimicing competiton is the verbal imitation of different and preferably famous voices in a sarcastic way . Stand up to raise your own interpretation of the world around you in a sastirical way in the stand up comedy comepetition. Sign us up by paying an entry fee of ₹ 300 to participate in these events and win prizes worth ₹ 5000 </p>
+      <p>Register for: </p>
+      <a onclick="showAlert()" href="#beatbox">Beatbox</a>
+      <a onclick="showAlert()" href="#beatbox">Rapping</a><br><br>
+      <a onclick="showAlert()" href="#beatbox">Standup Comedy</a>
+      <a onclick="showAlert()" href="#beatbox">Mimicry</a>
+    </div>
+    <img src="/images/beatbox.png" alt="">
+  </div>
+  <div id="openmic" class="event">
+    <div class="info">
+      <p><strong class="eventname">- Open-Mic -</strong><br><br>As the title suggests , this is an open event encouragng participants who master at the art of drawing the audience into their interpretations and perceptions i.e. into their own worlds . This includes story-telling , shayaris and peotry presentations . The participants with the most moving, insipring , toucing or a though provoking tale will be awarded a cash prize of ₹ 5000.To participate in this event , you are required to pay an entry fee of ₹ 300.  </p>
+      <p>Register for: </p>
+      <a onclick="showAlert()" href="#openmic">Poetry</a>
+      <a onclick="showAlert()" href="#openmic">Story Telling</a>
+      <a onclick="showAlert()" href="#openmic">Shayari</a>
+    </div>
+    <img src="/images/openmic.jpg" alt="">
+  </div>
+  <div id="mr-ms" class="event">
+    <div class="info">
+      <p style="color:rgb(255, 255, 255)"><strong class="eventname">- Mr and Ms Atulyam -</strong><br><br>Among a group , community , society , state or a country , there always stands out a person who takes the position of being the all - rounder with a talent or a plural , charisma in the speech to the cool walk and clearly the best among all . In our institute too , this edition of ATULYAM, as always , has the Mr &Ms ATULYAM searching for that person to come out and set the standards high on maintaining a charismatic handsome / beautiful persona , shoving the crowd away. So , do join us on this mega-event.</p>
+      <p style="color:rgb(255, 255, 255)">Register for: </p>
+      <a onclick="showAlert()" href="#mr-ms">Mr. Atulyam</a>
+      <a onclick="showAlert()" href="#mr-ms">Ms. Atulyam</a>
+    </div>
+    <img src="/images/mrmiss.png" alt="">
+  </div>
+</div>
+
+
+<footer class="footer">
+  <div class="contact-us">
+  <div class="reach-us">
+      <h1>Reach Us:</h1>
+      <p>NIT Arunachal Pradesh<br>
+      Yupia, Papum Pare, Arunachal Pradesh 791112<br>
+      Renya Razi:- +91 8729854050<br>
+      Obang Jerang:- +91 8415812752</p>
+  </div>
+  <div class="social">
+      <h1>Social Media</h1>
+      <a href="https://www.instagram.com/atulyam2k20/"><i class="fab fa-instagram fa-2x"></i>
+      <a href="" ><i class="fab fa-twitter fa-2x"></i></a>
+      <a href="https://www.facebook.com/atulyamnitap/" ><i class="fab fa-facebook fa-2x"></i></a>
+  </div>
+  </div>
+  <div class="ourname">
+  <p>Developed with <i class="fas fa-coffee"></i> and <i class="fas fa-heart"></i> by <a href="https://www.linkedin.com/in/roni-raj-kamal-pradhan-71a3b0170/" target="_blank">Roni</a> and <a href="https://www.linkedin.com/in/anirudh-ramteke-09276417b/" target="_blank">Anirudha.</a><br>&copy Copyright Atulyam2020</p>
+  </div>
+</footer>
+
+
+<script>
+   document.querySelector('.hamburger').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelector('.navigation').classList.toggle('active');
+
+  });
+  window.onscroll = function() {myFunction()};
+  
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+  
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+
+  const debounce = (fn) => {
+
+  let frame;
+      return (...params) => {
+    
+    if (frame) { 
+      cancelAnimationFrame(frame);
+    }
+
+    frame = requestAnimationFrame(() => {
+      
+      fn(...params);
+    });
+
+  } 
+  };
+  const storeScroll = () => {
+  document.documentElement.dataset.scroll = window.scrollY;
+  }
+
+  document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+
+  storeScroll();
+  function showAlert(){
+    alert('Please login/register to get registered for this event');
+  }
+
+ 
+
+</script>
